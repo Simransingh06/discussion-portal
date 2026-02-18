@@ -91,15 +91,7 @@ app.get('/api/v1', (req, res) => {
   });
 });
 // TEMP: initialize production DB (run once)
-app.get('/init-db', async (req, res) => {
-  try {
-    const setupDatabase = require('./config/setupDatabase');
-    await setupDatabase();
-    res.json({ success: true, message: 'Database initialized successfully' });
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
-  }
-});
+
 
 // ── 404 Handler ──────────────────────────────────────────
 app.use('*', (req, res) => {
