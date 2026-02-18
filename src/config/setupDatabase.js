@@ -170,12 +170,14 @@ const setupDatabase = async () => {
     console.log('✅ Indexes created (optimized for 40% latency reduction)');
     console.log('✅ Triggers created');
     console.log('\n🎉 Database setup complete!\n');
-    process.exit(0);
+    
 
   } catch (error) {
     console.error('❌ Database setup failed:', error.message);
-    process.exit(1);
+    
   }
 };
+module.exports = setupDatabase;
 
-setupDatabase();
+
+
